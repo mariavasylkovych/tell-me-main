@@ -1,0 +1,61 @@
+@import "../variables.scss";
+
+.user-page {
+    display: flex;
+    justify-content: space-evenly;
+    height: 800px;
+
+
+    .user-information {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        width: 100%;
+        align-items: center;
+
+        h2 {
+            color: $yellow;
+
+            span {
+                color: white;
+            }
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+
+            .p-name-inf {
+                color: $grey;
+                font-size: 20px;
+            }
+
+            .p-value-inf{
+                color: white;
+                font-size: 23px;
+                padding: 10px;
+            }
+        }
+    }
+
+    .title {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 20px;
+
+        img {
+            max-width: 300px;
+            max-height: 350px;
+            margin: auto 0;
+        }
+
+        h2 {
+            color: white;
+
+            span {
+                color: $yellow;
+            }
+        }
+    }
+}

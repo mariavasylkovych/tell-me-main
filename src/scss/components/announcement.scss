@@ -1,0 +1,127 @@
+@import "../variables";
+
+.announcements-home {
+  padding: 0 20px 20px 0;
+  background-color: rgba(209, 209, 209, 0.377);
+
+  .header-announs {
+    // text-align: end;
+    font-size: 25px;
+    color: $grey;
+    font-weight: 700;
+    margin: 10px 0 0 0;
+  }
+
+  .announcements {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    // .announ-edit {
+    //  display: flex;
+    //  flex-direction: column;
+    //  justify-content: space-between;
+    //  width: 30%;
+    //  height: auto;
+    //  margin: 4%;
+    //  padding: 2% 2% 0 2%;
+    //  border: solid $yellow 1px;
+
+    //  .input-title {
+    //    border: solid $grey 1px;
+    //    height: 20px;
+    //    padding: 3px;
+    //  }
+
+    //  .input-body {
+    //    height: 100px;
+    //    margin: 5px 0;
+    //    border: solid $grey 1px;
+    //    padding: 3px;
+    //  }
+
+    //  .button-edit-announ {
+    //    width: 80px;
+    //    border-radius: 50px;
+    //    font-size: 11px;
+    //    border: solid black 1px;
+    //    padding: 2px;
+    //  }
+    // }
+
+    .announ {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 30%;
+      height: auto;
+      margin: 4%;
+      padding: 2% 2% 0 2%;
+      border: solid $yellow 1px;
+
+      .input-title {
+        border: solid $grey 1px;
+        height: 20px;
+        padding: 3px;
+      }
+
+      .input-body {
+        height: 100px;
+        margin: 10px 0;
+        border: solid $grey 1px;
+        padding: 3px;
+      }
+
+      .body-announ {
+        margin: 8% 0;
+      }
+
+      .buttom-announ {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 0 2px 0;
+
+        .name-user {
+          font-size: 13px;
+        }
+
+
+        .button-edit-announ {
+          width: 80px;
+          border-radius: 50px;
+          font-size: 11px;
+          border: solid black 1px;
+          padding: 2px;
+        }
+
+        .button-edit-announ:hover {
+          background-color: rgba(255, 252, 52, 0.116);
+        }
+      }
+    }
+  }
+
+  .block-button-announ {
+    display: flex;
+    justify-content: end;
+
+
+    .button-add-announ {
+       border-left: solid $grey 1.5px;
+       border-right: solid $grey 1.5px;
+       font-size: 15px;
+       border-top: none;
+       border-bottom: none;
+       padding: 8px;
+      //  margin: 0 0 0 20%;
+       
+    }
+
+    .button-add-announ:hover {
+        border-left: solid $yellow 1.5px;
+        border-right: solid $yellow 1.5px;
+    }
+
+    
+  }
+}

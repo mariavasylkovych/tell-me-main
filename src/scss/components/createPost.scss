@@ -1,0 +1,69 @@
+@import "../variables.scss";
+
+.create-post {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 800px;
+
+  h2 {
+    color: white;
+    width: 400px;
+    text-align: right;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 500px;
+
+    input {
+      background-color: rgb(255, 255, 255);
+      border: none;
+      width: 100%;
+      height: 30px;
+      padding: 6px;
+    }
+
+    .input-for-post {
+      background-color: rgb(255, 255, 255);
+      border: none;
+      padding: 6px;
+      height: 350px;
+      width: 100%;
+      margin: 20px 0;
+    }
+
+    .button-create {
+      background-color: rgba(255, 255, 255, 0);
+      border: solid 0.5mm $yellow;
+      font-size: 16px;
+      color: $yellow;
+      border-radius: 50px;
+      width: 100px;
+      height: 30px;
+      margin: 10px 0;
+      padding: 5px 0;
+      text-align: center;
+    }
+
+    .button-create:hover {
+        background-color: rgba(255, 255, 255, 0.212);
+    }
+  }
+
+  .logo {
+    display: flex;
+    align-items: flex-start;
+    height: 95%;
+    color: white;
+    width: 8%;
+    // margin: 10px 20px ;
+
+    span {
+      color: $yellow;
+      padding: 0 0 0 5px;
+    }
+  }
+}

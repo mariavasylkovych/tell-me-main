@@ -1,0 +1,121 @@
+@import "../variables";
+
+.comments-of-post {
+  width: 800px;
+  max-height: 500px;
+  margin: 90px 0;
+  background-color: rgba(0, 0, 0, 0.472);
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  // padding: 30px;
+
+  img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+  }
+
+  h3 {
+    color: $yellow;
+    padding: 0 0 20px 0;
+  }
+
+  .comment-data {
+    display: flex;
+
+    .comment-content-for-update {
+      display: flex;
+      align-items: center;
+      input {
+        margin: 20px;
+        width: 520px;
+        height: 25px;
+        border: solid 1px $grey;
+      }
+
+      button {
+        border-left: solid $grey 1.5px;
+        height: 30px;
+        font-size: 10px;
+        border-top: none;
+        border-bottom: none;
+        border-right: none;
+        padding: 5px;
+        background-color: rgba(0, 0, 0, 0);
+        color: $yellow;
+      }
+
+      button:hover {
+        border-left: solid $yellow 1.5px;
+      }
+    }
+
+      
+
+    .comment-content {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      justify-content: space-between;
+      
+      p {
+        color: white;
+      }
+    //   flex-direction: column;
+
+      // align-items: center;
+      // justify-content: end;
+
+      .user-avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 50px;
+        margin: 0 20px 0 0;
+      }
+      }
+      
+
+.button-block {
+  display: flex;
+      button {
+        border-left: solid $grey 1.5px;
+        height: 30px;
+        font-size: 10px;
+        border-top: none;
+        border-bottom: none;
+        border-right: none;
+        padding: 5px;
+        margin: 0 0 0 20%;
+        background-color: rgba(0, 0, 0, 0);
+        color: $yellow;
+      }
+
+      button:hover {
+        border-left: solid $yellow 1.5px;
+      }}
+    
+  }
+
+  .comment-input-block {
+    display: flex;
+    align-items: center;
+    margin: 10px 10px;
+
+    
+
+    input {
+      margin-left: 10px;
+      width: 70%;
+      border: solid 1px $grey;
+      height: 25px;
+    }
+
+    button {
+      color: $yellow;
+      font-size: 40px;
+      margin: 0 10px;
+      border: none;
+      background-color: rgba(255, 255, 255, 0);
+    }
+  }
+}

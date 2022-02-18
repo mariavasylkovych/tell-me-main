@@ -1,0 +1,8 @@
+export { default as Announcement } from './Announcement'
+export { default as Comment } from './Comment'
+export { default as CreatePost } from './CreatePost'
+export { default as GetPosts } from './GetPosts'
+export { default as PostBlock } from './PostBlock'
+export { default as UserPage } from './UserPage'
+export { default as Input } from './Input'
+export { default as Pagination } from './Pagination'
