@@ -8,8 +8,7 @@ import { Link } from "react-router-dom";
 import { GetPosts } from "../components/index";
 import { setPosts, setDataAnnouncements, setGetPostsPage } from "../redux/action";
 
-
-function Home() {
+const Home = () => {
 
   let data = JSON.parse(localStorage.user);
 
