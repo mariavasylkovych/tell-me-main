@@ -1,6 +1,7 @@
 import React from "react";
 import '../scss/components/input.scss'
 
+
 const Input = (props) => {
   const inputType = props.type || "text";
   const htmlFor = `${inputType}-${Math.random()}`;
@@ -15,6 +16,12 @@ const Input = (props) => {
         onChange={props.onChange}
         placeholder={props.placeholder}
       />
+
+{
+                props.error
+                    ? <span>{props.formErrors}</span>
+                    : null
+            }
     </div>
   );
 };

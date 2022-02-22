@@ -38,6 +38,7 @@ function Signup() {
       age: '',
       avatar: ''
     },
+    error: false
   });
 
   
@@ -49,6 +50,10 @@ function Signup() {
       console.log('evrething valid');
     } else {
       console.log('error');
+      setUser((prevState) => ({
+        ...prevState,
+        error: true
+      }))
    }
   }
 
@@ -124,19 +129,19 @@ function Signup() {
         }
       })
     
-    // setUser((preventDefault) => ({
-    //   ...preventDefault,
-    //   firstname: '',
-    //   lastname: '',
-    //   email: '',
-    //   password: '',
-    //   firstname: '',
-    //   configPass: '',
-    //   age: '',
-    //   avatar: '',
-    // }))
+    setUser((preventDefault) => ({
+      ...preventDefault,
+      firstname: '',
+      lastname: '',
+      email: '',
+      password: '',
+      configPass: '',
+      age: '',
+      avatar: '',
+    }))
     
   }
+
   return (
     <div className="authorization">
       <h2>Sign Up</h2>
@@ -149,6 +154,7 @@ function Signup() {
             placeholder="first name"
             name="firstname"
             formErrors={user.formErrors.firstname}
+            error={user.error}
           />
           <Input
             type="text"
@@ -157,6 +163,7 @@ function Signup() {
             placeholder="last name"
             name="lastname"
             formErrors={user.formErrors.lastname}
+            error={user.error}
           />
           <Input
             type="email"
@@ -165,6 +172,7 @@ function Signup() {
             formErrors={user.formErrors.email}
             placeholder="email"
             name="email"
+            error={user.error}
           />
           <Input
             type="password"
@@ -205,7 +213,8 @@ function Signup() {
           <p> maybe you already have an account</p>
           <Link to='/login'><button className='button'>
             Login
-          </button></Link>
+          </button>
+            </Link>
         </form>
       </div>
     </div>

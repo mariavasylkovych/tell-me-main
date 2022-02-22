@@ -4,24 +4,16 @@ import { useDispatch } from "react-redux";
 import "../scss/app.scss";
 import "../scss/components/button.scss";
 
-import { Link } from "react-router-dom";
+import { HomeAuthorizations, HomeUnauthorized } from '../components/index'
 import { GetPosts } from "../components/index";
 import { setPosts, setDataAnnouncements, setGetPostsPage } from "../redux/action";
 
 const Home = () => {
 
-  let data = JSON.parse(localStorage.user);
+  const token = localStorage.getItem("token")
 
   const dispatch = useDispatch();
-  const openMenu = () => {
-    document.getElementById("menu").classList.toggle("show");
-  };
-
-  const deletToken = () => {
-    localStorage.removeItem("token");
-    document.location.reload(true);
-  };
-
+ 
   React.useEffect(() => {
     fetch(
       `https://ekreative-json-server.herokuapp.com/664/announcements?_sort=createdAt&_order=desc&_limit=10`
@@ -53,71 +45,10 @@ const Home = () => {
 
   return (
     <div className="home">
-      {localStorage.getItem("token") ? (
-        <div className="for-autho-user">
-          <div className="menu-block">
-            <div className="data-of-user">
-              <img className="avatar" src={data.avatar} alt="" />
-              <Link to="user-page">
-                <p>
-                  {data.firstname} {data.lastname}
-                </p>
-              </Link>
-            </div>
-            <img
-              src="https://img.icons8.com/ios-glyphs/30/ffffff/menu--v1.png"
-              onClick={openMenu}
-              className="menu-icon"
-              alt=''
-            />
-            <ul id="menu">
-              <Link to="create">
-                <li>
-                  Cre<span>a</span>te
-                </li>
-              </Link>
-              <Link to="/">
-                <li onClick={deletToken}>
-                  Log<span>o</span>ut
-                </li>
-              </Link>
-            </ul>
-          </div>
-
-          <div className="content-header">
-            <h1>
-              Tell <span>me</span>
-            </h1>
-            <p>
-              Welcome to home! <br />
-              May be you want write post about new dream or little history...{" "}
-              <br /> You may do it here:
-            </p>
-            <Link to="create" className="button-home">
-              Create new post
-            </Link>
-          </div>
-        </div>
+      {token ? (
+        <HomeAuthorizations />
       ) : (
-        <div className="home-header">
-          <h1>
-            Tell <span>me</span>
-          </h1>
-          <p>
-            Hi! Here you may write posts about your life, your dreams and share
-            your purpose!!! <br /> Also you may read it about other people...
-            Have a nice tripe in our world!
-          </p>
-          <div>
-            <Link to="login" className="button-home">
-              Login
-            </Link>
-            <span>or</span>
-            <Link to="/signup" className="button-home">
-              Register
-            </Link>
-          </div>
-        </div>
+       <HomeUnauthorized />
       )}
       <div className="home-content">
         <GetPosts />

@@ -16,10 +16,12 @@ const Pagination = ({
 
   const dispatch = useDispatch();
 
+  React.useEffect(() => {
   for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
     paginPageWithPosts.push(i);
   }
-
+})
+  
   const pagFunc = (number) => {
     setCurrentPage(number)
     
