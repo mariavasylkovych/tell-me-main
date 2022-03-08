@@ -10,7 +10,6 @@ const GetPosts = () => {
   const announcements = useSelector((state) => state.announcementsReducer.announcements)
   const [currentPage, setCurrentPage] = React.useState(1);
   const [postsPerPage] = React.useState(10);
-
   const postsPages = useSelector((state) => state.paginateReducer.posts);
 
   return (

@@ -5,6 +5,7 @@ import '../scss/components/input.scss'
 const Input = (props) => {
   const inputType = props.type || "text";
   const htmlFor = `${inputType}-${Math.random()}`;
+  // console.log(props);
 
   return (
     <div className="input">
@@ -17,11 +18,11 @@ const Input = (props) => {
         placeholder={props.placeholder}
       />
 
-{
-                props.error
-                    ? <span>{props.formErrors}</span>
-                    : null
-            }
+      {props.formErrors ? 
+        <span>{props.formErrors}</span> :
+        ''
+        
+      }
     </div>
   );
 };

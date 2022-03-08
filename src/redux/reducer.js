@@ -15,6 +15,8 @@ import {
   UPDATE_COMMENT,
   UPDATE_POST,
   USER_DATA_POST,
+  USER_SIGNUP,
+  USER_SIGNUP_ERROR,
 } from "./action";
 
 const initialState = {
@@ -22,7 +24,9 @@ const initialState = {
   announcements: [],
   comments: [],
   dataPost: {},
-  userData: {}
+  userData: {},
+  userSignup: {},
+  userSignupError: {},
 };
 
 export const userData = (state = initialState, action) => {
@@ -57,8 +61,46 @@ export const paginateReducer = (state = initialState, action) => {
   }
 };
 
+export const userSignUp = (state = initialState, action) => {
+  switch (action.type) {
+    case USER_SIGNUP:
+      return {
+        ...state,
+        userSignup: {
+          firstname: action.firstname,
+          lastname: action.lastname,
+          email: action.email,
+          password: action.password,
+          confirPass: action.confirPass,
+          age: action.age,
+          avatar: action.avatar,
+        }
+      }
+    
+    default:
+      return state
+  }
+}
 
-
+export const userSignupError = (state=initialState, action) => {
+  switch (action.type) {
+    case USER_SIGNUP_ERROR:
+      return {
+        ...state,
+        userSignupError: {
+          firstname: action.firstname,
+          lastname: action.lastname,
+          email: action.email,
+          password: action.password,
+          confirPass: action.confirPass,
+          age: action.age,
+        }
+      }
+    default:
+      return state;
+  }
+}
+ 
 export const announcementsReducer = (state = initialState, action) => {
   switch (action.type) {
     case DATA_ANNOUN:

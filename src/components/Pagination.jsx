@@ -13,7 +13,6 @@ const Pagination = ({
 }) => {
   const paginPageWithPosts = [];
 
-
   const dispatch = useDispatch();
 
   React.useEffect(() => {

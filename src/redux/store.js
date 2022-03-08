@@ -1,7 +1,7 @@
 import { applyMiddleware, combineReducers, createStore } from "redux"
 import thunk from "redux-thunk"
-import { paginateReducer, announcementsReducer, posts, commentsReducer, userData } from "./reducer"
+import { paginateReducer, announcementsReducer, posts, commentsReducer, userData, userSignUp, userSignupError } from "./reducer"
 
-const rootReducer = combineReducers({paginateReducer, announcementsReducer, posts, commentsReducer, userData})
+const rootReducer = combineReducers({paginateReducer, announcementsReducer, posts, commentsReducer, userData, userSignUp, userSignupError})
 
 export const store = createStore(rootReducer, applyMiddleware(thunk))
