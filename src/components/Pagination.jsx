@@ -11,25 +11,29 @@ const Pagination = ({
   totalPosts,
   setCurrentPage,
 }) => {
-  const paginPageWithPosts = [];
+  const [paginPageWithPost, setPaginPageWithPost] = React.useState({
+    arr: []
+  })
 
   const dispatch = useDispatch();
 
   React.useEffect(() => {
-  for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
-    paginPageWithPosts.push(i);
+    for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
+    //  paginPageWithPost.push(i)
+        setPaginPageWithPost(propsState => ({
+        arr: [...propsState.arr, i]
+     }))
   }
-})
+  }, [postsPerPage, totalPosts])
   
   const pagFunc = (number) => {
     setCurrentPage(number)
-    
       dispatch(setEditPostsPage(number, postsPerPage));
   };
   
   return (
     <div className="pagination">
-      {paginPageWithPosts.map((number, index) => (
+      {paginPageWithPost.arr.map((number, index) => (
         <button
           id={`${index + 1}`}
           key={number}
